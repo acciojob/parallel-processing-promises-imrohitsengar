@@ -8,6 +8,7 @@ const images = [
   { url: "https://picsum.photos/id/239/200/300" },
 ];
 const loading = document.createElement("div");
+loading.style.display="block";
 loading.id = "loading";
 loading.innerText = "Loading...";
 output.appendChild(loading);
