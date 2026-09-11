@@ -29,31 +29,21 @@ function downloadImage(url) {
   });
 }
 function downloadImages() {
-
   loading.style.display = "block";
   error.innerText = "";
-
   const promises = images.map(image => {
     return downloadImage(image.url);
   });
-
   Promise.all(promises)
     .then(downloadedImages => {
-
       loading.style.display = "none";
-
       downloadedImages.forEach(img => {
         output.appendChild(img);
       });
-
     })
     .catch(err => {
-
       loading.style.display = "none";
       error.innerText = err;
-
     });
 }
-
-
 downloadImages();
